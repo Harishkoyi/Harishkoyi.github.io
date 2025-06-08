@@ -5,16 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Harish Koyi | Video Editor & Album Designer</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Google Fonts for an elegant look -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome for icons -->
+    
+    <!-- FONT AWESOME (ICONS) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS (ANIMATE ON SCROLL LIBRARY) -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <body>
 
-    <!-- Header -->
     <header>
         <nav>
             <div class="logo">Harish Koyi</div>
@@ -26,64 +25,62 @@
         </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Harish's Portfolio World</h1>
-            <p class="subtitle">Professional Video Editor & Custom Wedding Album Designer</p>
-            <a href="#portfolio" class="cta-button">View My Work</a>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <main id="services" class="container">
-        <h2>What I Do</h2>
-        <div class="services-grid">
-            <div class="service-card">
-                <i class="fas fa-film"></i>
-                <h3>Cinematic Video Editing</h3>
-                <p>From wedding highlights and event recaps to promotional content, I transform your raw footage into a compelling, cinematic story that captivates your audience.</p>
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1 data-aos="fade-down">Harish's Portfolio World</h1>
+                <p class="subtitle" data-aos="fade-up" data-aos-delay="200">Professional Video Editor & Custom Wedding Album Designer</p>
+                <a href="#portfolio" class="cta-button" data-aos="fade-up" data-aos-delay="400">View My Work</a>
             </div>
-            <div class="service-card">
-                <i class="fas fa-book-open"></i>
-                <h3>Wedding Album Design</h3>
-                <p>I design stunning, bespoke wedding albums that are more than just photos—they are a timeless narrative of your special day, crafted with elegance and care.</p>
-            </div>
-        </div>
-    </main>
+        </section>
 
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio-section">
-        <div class="container">
-            <h2>My Portfolio</h2>
-            <p class="portfolio-intro">Here is a selection of my recent work. I will be adding real images soon!</p>
+        <section id="services" class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>What I Do</h2>
+                <p>I specialize in turning your moments and ideas into high-quality visual content that tells a story and leaves a lasting impression.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-film"></i>
+                    <h3>Cinematic Video Editing</h3>
+                    <p>From wedding highlights and event recaps to promotional content, I transform your raw footage into a compelling, cinematic story that captivates your audience.</p>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                    <i class="fas fa-book-open"></i>
+                    <h3>Wedding Album Design</h3>
+                    <p>I design stunning, bespoke wedding albums that are more than just photos—they are a timeless narrative of your special day, crafted with elegance and care.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio" class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>My Portfolio</h2>
+                <p>Here is a selection of my recent work. Hover over an item to see details.</p>
+            </div>
             <div class="portfolio-grid">
-                <!-- PORTFOLIO ITEM 1 -->
-                <div class="portfolio-item">
+                <div class="portfolio-item" data-aos="fade-up" data-aos-delay="100">
                     <img src="https://via.placeholder.com/600x400.png?text=Album+Design" alt="Latest Album Designs">
                     <div class="overlay">
                         <h3>Latest Album Designs</h3>
                         <p>Album design</p>
                     </div>
                 </div>
-                <!-- PORTFOLIO ITEM 2 -->
-                <div class="portfolio-item">
+                <div class="portfolio-item" data-aos="fade-up" data-aos-delay="200">
                     <img src="https://via.placeholder.com/600x400.png?text=Commercial+Ad" alt="Commercial Advertisement Of Hectra">
                     <div class="overlay">
                         <h3>Commercial Advertisement Of Hectra</h3>
                         <p>Commercial Advertisement</p>
                     </div>
                 </div>
-                <!-- PORTFOLIO ITEM 3 -->
-                <div class="portfolio-item">
+                <div class="portfolio-item" data-aos="fade-up" data-aos-delay="300">
                     <img src="https://via.placeholder.com/600x400.png?text=Photo+Retouching" alt="Fashion portrait retouching">
                     <div class="overlay">
                         <h3>Fashion portrait retouching</h3>
                         <p>Professional Photo Retouching</p>
                     </div>
                 </div>
-                <!-- PORTFOLIO ITEM 4 -->
-                <div class="portfolio-item">
+                <div class="portfolio-item" data-aos="fade-up" data-aos-delay="400">
                     <img src="https://via.placeholder.com/600x400.png?text=Flyer+Design" alt="Professional Flyers">
                     <div class="overlay">
                         <h3>Professional Flyers</h3>
@@ -91,22 +88,29 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section">
-        <div class="container">
-            <h2>Ready to bring your vision to life?</h2>
-            <p>I'm currently available for freelance projects. Let's talk about your needs and create something amazing together.</p>
-            <a href="mailto:harishkoyi1699@gmail.com" class="cta-button">Get In Touch</a>
-        </div>
-    </section>
+        <section id="contact" class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Ready to bring your vision to life?</h2>
+                <p>I'm currently available for freelance projects. Let's talk about your needs and create something amazing together.</p>
+                <a href="mailto:harishkoyi1699@gmail.com" class="cta-button">Get In Touch</a>
+            </div>
+        </section>
+    </main>
 
-    <!-- Footer -->
     <footer>
         <p>© 2024 Harish Koyi. All Rights Reserved.</p>
     </footer>
+
+    <!-- AOS (ANIMATE ON SCROLL) SCRIPT -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+          duration: 1000, // animation duration in milliseconds
+          once: true, // whether animation should happen only once - while scrolling down
+      });
+    </script>
 
 </body>
 </html>
