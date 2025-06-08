@@ -1,25 +1,25 @@
-/* --- MODERN PORTFOLIO THEME --- */
+/* --- ELEGANT FASHION PORTFOLIO THEME --- */
 
 /* 1. SETUP & FONTS */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;500;700&display=swap');
 
 :root {
-    --bg-dark: #0D1117; /* Very dark blue-gray */
-    --bg-light: #161B22; /* Lighter card background */
-    --text-primary: #e6edf3;
-    --text-secondary: #8b949e;
-    --accent: #238636; /* A rich green for accents */
-    --accent-glow: rgba(35, 134, 54, 0.4);
-    --border-color: #30363d;
+    --bg-color: #ffffff;
+    --text-primary: #1a1a1a;
+    --text-secondary: #555555;
+    --accent-color: #c5a47e; /* A classy, muted gold */
+    --border-color: #eaeaea;
+    --font-cursive: 'Great Vibes', cursive;
+    --font-sans: 'Montserrat', sans-serif;
 }
 
 body {
-    background-color: var(--bg-dark);
+    background-color: var(--bg-color);
     color: var(--text-primary);
-    font-family: 'Inter', sans-serif;
+    font-family: var(--font-sans);
+    font-weight: 300;
     margin: 0;
-    line-height: 1.7;
-    -webkit-font-smoothing: antialiased; /* Smoother fonts on Mac */
+    line-height: 1.8;
 }
 
 html {
@@ -28,7 +28,7 @@ html {
 
 /* 2. NAVIGATION BAR */
 header {
-    background: rgba(13, 17, 23, 0.8);
+    background: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--border-color);
     padding: 1rem 2rem;
@@ -46,10 +46,10 @@ nav {
 }
 
 .logo {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 700;
-    font-size: 1.5rem;
+    font-family: var(--font-cursive);
+    font-size: 2.5rem;
     color: var(--text-primary);
+    font-weight: normal;
 }
 
 nav ul {
@@ -63,50 +63,85 @@ nav a {
     text-decoration: none;
     color: var(--text-secondary);
     font-weight: 500;
-    font-size: 1rem;
     transition: color 0.3s ease;
 }
 
 nav a:hover {
-    color: var(--text-primary);
+    color: var(--accent-color);
 }
 
-/* 3. RICH HERO SECTION */
+/* 3. VIDEO HERO SECTION (COVER PAGE) */
 .hero {
-    min-height: 80vh;
+    position: relative;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     padding: 2rem;
+    overflow: hidden; /* Important for animation */
+    color: #fff; /* Text on video will be white */
 }
 
-.hero-content {
-    max-width: 800px;
+.hero-video-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: -2;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay for text readability */
+    z-index: -1;
+}
+
+/* 4. "REVEAL" ANIMATION FOR HERO TEXT */
+.hero-content h1, .hero-content .subtitle {
+    opacity: 0; /* Initially hidden */
+}
+
+.text-reveal-mask {
+    overflow: hidden; /* Hides the text before it slides in */
+}
+
+.hero-content h1 span {
+    display: inline-block;
+    transform: translateY(110%);
+    transition: transform 1.2s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.hero-content .subtitle span {
+    display: inline-block;
+    transform: translateY(110%);
+    transition: transform 1.2s cubic-bezier(0.2, 1, 0.3, 1) 0.2s; /* 0.2s delay */
 }
 
 .hero h1 {
-    font-family: 'Poppins', sans-serif;
-    font-size: clamp(2.5rem, 10vw, 5rem); /* Responsive font size */
-    font-weight: 700;
-    line-height: 1.1;
-    margin: 0;
-    /* Gradient text effect */
-    background: linear-gradient(45deg, #34d399, #60a5fa);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    font-family: var(--font-cursive);
+    font-size: clamp(4rem, 12vw, 8rem); /* Big, responsive cursive font */
+    font-weight: normal;
+    line-height: 1.2;
+    margin: 0 0 1rem 0;
 }
 
 .hero .subtitle {
+    font-family: var(--font-sans);
+    font-weight: 300;
     font-size: 1.25rem;
-    color: var(--text-secondary);
-    margin-top: 1.5rem;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
+    letter-spacing: 2px; /* Adds to the fashion look */
+    text-transform: uppercase;
 }
 
-/* 4. CONTENT SECTIONS & CARDS */
+/* 5. GENERAL CONTENT SECTIONS */
 .container {
     max-width: 1100px;
     margin: 0 auto;
@@ -119,158 +154,79 @@ nav a:hover {
 }
 
 .section-header h2 {
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--font-sans);
+    font-weight: 700;
     font-size: 2.5rem;
     margin-bottom: 0.5rem;
 }
 
-.section-header p {
-    color: var(--text-secondary);
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    text-align: left;
-}
-
-.service-card {
-    background: var(--bg-light);
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    padding: 2rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.service-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-}
-
-.service-card i {
-    font-size: 2rem;
-    color: var(--accent);
-    margin-bottom: 1rem;
-}
-
-.service-card h3 {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.25rem;
-    margin-bottom: 0.5rem;
-}
-
-/* 5. MODERN PORTFOLIO GRID */
+/* Other sections (Portfolio, Services, Contact) can be styled here */
+/* For now, we focus on the cover page */
 #portfolio {
-    background-color: var(--bg-light);
+    background-color: #f9f9f9;
 }
 
 .portfolio-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
+    gap: 2rem;
 }
 
 .portfolio-item {
-    background: var(--bg-dark);
-    border-radius: 12px;
+    border-radius: 8px;
     overflow: hidden;
     position: relative;
     cursor: pointer;
-    border: 1px solid var(--border-color);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
     transition: all 0.4s ease;
 }
-
 .portfolio-item:hover {
-    transform: scale(1.03);
-    box-shadow: 0 0 25px var(--accent-glow);
-    border-color: var(--accent);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
-
 .portfolio-item img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
     display: block;
-    transition: opacity 0.4s ease;
 }
-
-.portfolio-item:hover img {
-    opacity: 0.1;
-}
-
-.overlay {
+.portfolio-item .overlay {
     position: absolute;
-    top: 0;
+    bottom: 0;
     left: 0;
     right: 0;
-    bottom: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 1.5rem;
-    opacity: 0;
-    transition: opacity 0.4s ease;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    color: #fff;
+    padding: 2rem 1.5rem 1.5rem 1.5rem;
 }
-
-.portfolio-item:hover .overlay {
-    opacity: 1;
-}
-
 .overlay h3 {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.4rem;
-    margin: 0;
-    transform: translateY(10px);
-    transition: transform 0.4s ease;
+    font-family: var(--font-sans);
+    font-weight: 700;
 }
-
 .overlay p {
-    color: var(--text-secondary);
-    margin-top: 0.5rem;
-    transform: translateY(10px);
-    transition: transform 0.4s ease 0.1s;
+    color: #ddd;
+    font-size: 0.9rem;
 }
 
-.portfolio-item:hover .overlay h3,
-.portfolio-item:hover .overlay p {
-    transform: translateY(0);
-}
-
-
-/* 6. CONTACT & FOOTER */
+/* 6. CTA & FOOTER */
 .cta-button {
     display: inline-block;
-    background-color: var(--accent);
-    color: #fff;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
+    background: transparent;
+    border: 2px solid var(--accent-color);
+    color: var(--accent-color);
+    font-family: var(--font-sans);
+    font-weight: 500;
     padding: 0.8rem 2rem;
-    border: none;
-    border-radius: 8px;
+    border-radius: 50px;
     text-decoration: none;
     margin-top: 2rem;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    transition: all 0.3s ease;
 }
-
 .cta-button:hover {
-    background-color: #2ea043;
-    transform: translateY(-3px);
+    background-color: var(--accent-color);
+    color: #fff;
 }
-
 footer {
     padding: 2rem;
     text-align: center;
     color: var(--text-secondary);
-    border-top: 1px solid var(--border-color);
-}
-
-/* 7. RESPONSIVE DESIGN */
-@media (max-width: 768px) {
-    nav { flex-direction: column; gap: 1rem; }
-    .container { padding: 4rem 1rem; }
+    background-color: #f9f9f9;
 }
